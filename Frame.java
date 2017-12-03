@@ -48,10 +48,31 @@ public class Frame {
             {
             		buttonLayer.setVisible(false);
                 JPanel screen1 = new JPanel();
+                JButton next1 = new JButton();
+                next1.setSize(100,20);
+                next1.setAlignmentX(Component.RIGHT_ALIGNMENT);
+                next1.setAlignmentY(Component.BOTTOM_ALIGNMENT);
+                next1.setVisible(true);
+                next1.setText("Next");
                 screen1.setBackground(Color.getHSBColor(308, 91, 80));
+                screen1.add(next1); //Button doesn't show up
                 screen1.setVisible(true);
+                
+                next1.addActionListener(new ActionListener()
+                {
+                		@Override
+                		public void actionPerformed(ActionEvent e)
+                		{
+                			screen1.setVisible(false);
+                        JPanel screen2 = new JPanel();
+                        screen2.setBackground(Color.getHSBColor(199, 54, 95));
+                        screen2.setVisible(true);
+                		}
+                });
             }
         });
+        
+        
         
         
         

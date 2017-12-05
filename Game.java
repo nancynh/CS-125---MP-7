@@ -29,18 +29,18 @@ public class Game {
 						           + "\n\t• Play Battleship (3)"
 						           + "\n\t• Play Hangman (4)");
 			if (paintExists) {
-				System.out.println("\n\t• Stare at the painting (5)");
+				System.out.println("\t• Stare at the painting (5)");
 			} else {
-				System.out.println("\n\t• Stare at the wall (5)");
+				System.out.println("\t• Stare at the wall (5)");
 			}
-			System.out.println("\n\t• Play some music (" + numGames + ")"); //ahahaha probs won't work
+			System.out.println("\t• Play some music (" + numGames + ")"); //ahahaha probs won't work
 			
 			int play = scan.nextInt();
 			while (play <= 0 || play > numGames) {
 				System.out.println("Please type in a number between 1 and " + numGames);
 				play = scan.nextInt();
 			}
-			scan.close();
+			//scan.close();
 			if (play == 1) {
 				System.out.println("You leave the arcade. As soon as you stepped out, the whole place vanishes into thin air. Huh. Weird.\nYou head back home to do your MP. You completly forgot that it was due tomorrow.");
 				run = false;
@@ -54,7 +54,86 @@ public class Game {
 				if (paintExists) {
 					System.out.println("There's a portrait of a man on the wall. You walk up to it to take a closer look.");
 					try {
-					    Thread.sleep(1500);
+					    Thread.sleep(750);
+					    System.out.println("\n" + 
+					        "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo\n" + 
+					    		"oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo\n" + 
+					    		"oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo\n" + 
+					    		"oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo\n" + 
+					    		"oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo\n" + 
+					    		"oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo\n" + 
+					    		"oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo\n" + 
+					    		"oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo\n" + 
+					    		"oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo\n" + 
+					    		"oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo\n" + 
+					    		"oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooossyyhdddddhhhysooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo\n" + 
+					    		"ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooosydmNNNMMMMMMMMMNmhysoooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo\n" + 
+					    		"oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooydmNMMMNNNNNNMMMMMMMMNmyooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo\n" + 
+					    		"oooooooooooooooooooooooooooooooooooooooooooooooooooooooooshmmdhhyssosssyhhdmNNMMMMNhoooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo\n" + 
+					    		"ooooooooooooooooooooooooooooooooooooooooooooooooooooooooydhs/:-::////++ooosssyyhmNMNhsoooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo\n" + 
+					    		"ooooooooooooooooooooooooooooooooooooooooooooooooooooooshdh+:--:://++++ooooosssosoydNNdsooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo\n" + 
+					    		"oooooooooooooooooooooooooooooooooooooooooooooooooooooohdho/:://++ooooossssyyhyysssydNNdsoooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo\n" + 
+					    		"oooooooooooooooooooooooooooooooooooooooooooooooooooooymdy+///+++oooooosssyyhhhhyysshmNNhoooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo\n" + 
+					    		"oooooooooooooooooooooooooooooooooooooooooooooooooooosdmhs+++++++oooosoossssyyyhhhyyhmNMmsooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo\n" + 
+					    		"ooooooooooooooooooooooooooooooooooooooooooooooooooooymmho+++osyhdmmdhyyhhddddhhhhhhdmNMNsooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo\n" + 
+					    		"ooooooooooooooooooooooooooooooooooooooooooooooooooooymmyoooydmmNNNNNmmmmNNNNNNNNmdddmNMNyooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo\n" + 
+					    		"ooooooooooooooooooooooooooooooooooooooooooooooooooooymNyooyddmmNNMMNmddmNMMMNNNNNNmddNMNyooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo\n" + 
+					    		"oooooooooooooooooooooooooooooooooooooooooooooooooooosmms+yhdmmNNNNNmdsoymNNNNMMNNNmddNMmsooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo\n" + 
+					    		"ooooooooooooooooooooooooooooooooooooooooooooooooooooosh++osshdmmmdhyo/+oydmmmNNmmdmdhNNdoooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo\n" + 
+					    		"oooooooooooooooooooooooooooooooooooooooooooooooooooosyso////ossyyso+///+osyhdhhyyssyhmNhoooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo\n" + 
+					    		"oooooooooooooooooooooooooooooooooooooooooooooooooooosdyo//+osyhdho++++ossyshmmdhhyysymNyoooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo\n" + 
+					    		"oooooooooooooooooooooooooooooooooooooooooooooooooooooyhssyhdmmmmdddmddmmmmmmmmmNNmmddddsoooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo\n" + 
+					    		"ooooooooooooooooooooooooooooooooooooooooooooooooooooooyyhdmNNNmdhhdmNNNNNNNmmmmNNNNNmdyooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo\n" + 
+					    		"oooooooooooooooooooooooooooooooooooooooooooooooooooooooydmmNNmdhhhhddmmmmmmmmmmNNNNNmhoooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo\n" + 
+					    		"oooooooooooooooooooooooooooooooooooooooooooooooooooooooshdmmNNNmmmdddddhddmmNMMNNNNNmsoooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo\n" + 
+					    		"ooooooooooooooooooooooooooooooooooooooooooooooooooooooooyddmNNNmdo//:-:-:/+smNNNNNNNhooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo\n" + 
+					    		"oooooooooooooooooooooooooooooooooooooooooooooooooooooooosdmmmmmhyo++ooo+syyhhmmmNNNdoooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo\n" + 
+					    		"oooooooooooooooooooooooooooooooooooooooooooooooooooooooooymmmmddhhhhhhhhddmmmmNNNNmyoooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo\n" + 
+					    		"oooooooooooooooooooooooooooooooooooooooooooooooooooooooooshmmmmdddmNNNNNNNNNNNNNNNdsoooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo\n" + 
+					    		"ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooydmmmddhhhddmmmmmmmNNNNNdsoooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo\n" + 
+					    		"ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooshdmmmmmmmmmmNNNNNNNNNNmdsoooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo\n" + 
+					    		"oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooyhmNNNNNNMMMMMMMMMMMNNmdsoooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo\n" + 
+					    		"oooooooooooooooooooooooooooooooooooooooooooooooooooooooooosyhdmmNNNMMMMMMMMMMMNNNdo:oyoooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo\n" + 
+					    		"oooooooooooooooooooooooooooooooooooooooooooooooooooooooo+-+shhdmmdmNNMMMMMMMMNNho:--hNdysooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo\n" + 
+					    		"oooooooooooooooooooooooooooooooooooooooooooooooooooooosys```:sdddddmmNNNMMNNds/----:mNNNmhysoooooooooooooooooooooooooooooooooooooooooooooooooooooooooo\n" + 
+					    		"oooooooooooooooooooooooooooooooooooooooooooooooooooosshmy`````-odmmmNNNNmho:---..-:sNMNNNNNmddyyssoooooooooooooooooooooooooooooooooooooooooooooooooooo\n" + 
+					    		"oooooooooooooooooooooooooooooooooooooooooooooooooosyyhdms`` ````-sdhdhs/--......--/dNNNNNNNNNNNmmmdhyssooooooooooooooooooooooooooooooooooooooooooooooo\n" + 
+					    		"oooooooooooooooooooooooooooooooooooooooooooooossyyhhhdmNo` ` `:odmmdddy+........--sNMMNNNNNNNNNNNNNmmmddhysooooooooooooooooooooooooooooooooooooooooooo\n" + 
+					    		"oooooooooooooooooooooooooooooooooooooooooossyhhhhhhhddmmo`  -ydmmNNNMMMNdo-......+NNNMMNNNNNNNNNNNNNNNNmmmddhyssoooooooooooooooooooooooooooooooooooooo\n" + 
+					    		"ooooooooooooooooooooooooooooooooooooooosyyhhddddddhdddmm+``/dNNNmNNMMMMMMNy:....:hNNMNNNNNNNMMNNNNNNNNNNNmmmmmmdhyssoooooooooooooooooooooooooooooooooo\n" + 
+					    		"ooooooooooooooooooooooooooooooooooosyyhhddddddmmmdddddmm+`:+/odmNNMMMMMMds+//..-omNNNMMNNMMMMMNNNNNNNNNNNNNNNNNNmmmdhyoooooooooooooooooooooooooooooooo\n" + 
+					    		"ooooooooooooooooooooooooooooooossyhhddddddddddmNNmmdddmmo....-+NMMMMMMNh+:-.---/hNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNmdyoooooooooooooooooooooooooooooo\n" + 
+					    		"oooooooooooooooooooooooooossyyyhdddmmmmmmmddddmmNmmdddmms```.-yNNNMMMMmo:-..`.-omNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNdoooooooooooooooooooooooooooooo\n" + 
+					    		"ooooooooooooooooooooooooosydddddmmmmmmmmmmmmmmmNNmmmddmNs.``.omNMMMMMMNy-...`.:hNMNNNNNNNNNNNMNNNNNNNNNNNNNNNNNNNMNNNNNmsooooooooooooooooooooooooooooo\n" + 
+					    		"ooooooooooooooooooooooooosdmNmmmmmmmmmmmmmmmmmNNmmmmddmNh.``:mNMMMMMMMMN+...`.oNNMNNNNNNNNNNMMNNNNNNNNNNNNNNNNNNNNNNNNMNhooooooooooooooooooooooooooooo\n" + 
+					    		"oooooooooooooooooooooooooymmNNmmmmmmmmmmmmmmmmmmmmmmmmmmd-``hNNMMMMMMMMMd-.`.:dNNNNNNNNNNNNMMNNNNNNNNNNNNNNNNNNNNNNNMMMNmooooooooooooooooooooooooooooo\n" + 
+					    		"ooooooooooooooooooooooooohmmNNmmmmNmmmmmmmmmmmmmmmmmmmmmm/`:NNNMMMMMMMMMNo.`.sNNMNNNNNNNNNMNNNNNNNNNNNNNNNNNNNNMMNNMMMMNNyoooooooooooooooooooooooooooo\n" + 
+					    		"oooooooooooooooooooooooosdmmNNNmmmNNmmmmmmmmmmmmmmmmmmmmNo.sNNNMMMMMMMMMNy.`/mNNNNNNNNNNNMMNNNNNNNNNNNNNNNNNNNMMNNMMMMMNNdsooooooooooooooooooooooooooo\n" + 
+					    		"oooooooooooooooooooooooosmmNNMNmNNNNmmmmmmmmmmNNNNmmmmmmNy:dNNNMMMMMMMMMNh..hNNNMNNNNNNNMMNNNNNNNNNNNNNNNNNNMMMMNNMMMMMMNNyooooooooooooooooooooooooooo\n" + 
+					    		"ooooooooooooooooooooooooymmNNNNNNNNNNmmmmmmmmNNNNNmmmmmmNmsmMMMMMMMMMMMMMh-+mNNMMNNNNNNMMNNNNNNNNNNNNNNMMMMMMMMMNMMMMMMMMNdsoooooooooooooooooooooooooo\n" + 
+					    		"oooooooooooooooooooooooohNNNNNMNNNNNNmmmmmmmNNNNNNNmmmmmNNmNMMMMMMMMMMMMMh/hNNNNNNNNNNMMNNNNNNNNNNNNMMMMMMMMMMMMMMMMMMMMMNNyoooooooooooooooooooooooooo\n" + 
+					    		"oooooooooooooooooooooooodNNNNNMNNNNNNNNmmmmNNNNNNNNNNNmmNNMMMMMMMMMMMMMMMdyNNNMNNNNNNMMNNNNNNNNNNNMMMMMMMMMMMMMMMMMMMMMMMNNdoooooooooooooooooooooooooo\n" + 
+					    		"ooooooooooooooooooooooosmmNNNMMMNNNNNNNmNNNNNNNNNNNNNNNNNNMMMMMMMMMMMMMMMmmNNNNNNNNNMMMNNNNNNNNNNMMMMMMMMMMMMMMMMMMMMMMMMMNmsooooooooooooooooooooooooo\n" + 
+					    		"oooooooooooooooooooooooymmNNNMMMNNNNNNNNNNNNNNNNNNNNNNNNNNMMMMMMMMMMMMMMMNNNMMNNNNNMMMNNNNNNNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMNNhooooooooooooooooooooooooo\n" + 
+					    		"ooooooooooooooooooooooohmmNNNMMMNNNNNNNNNNNNNNNNNNNNNNNNNNNMMMMMMMMMMMMMNNNNMMNNNMMMMNNMMNNNNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdsoooooooooooooooooooooooo\n" + 
+					    		"ooooooooooooooooooooooohmNNNNMMMMNNNNNNNNNNNNNNNNNNNNNNNNNNMMMMMMMMMMMMMNNNMMMNNMMMMMMMMMNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNyoooooooooooooooooooooooo\n" + 
+					    		"ooooooooooooooooooooooodmNNNNMMMMNNNNNNNNNNNNNNNNNNNNNNNNNNNMMMMMMMMMMMNNNMMNNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNhoooooooooooooooooooooooo\n" + 
+					    		"oooooooooooooooooooooosdmNNNMMMMMNNNNNNNNNNNNNNNNNNNMNNNNNNNMMMMMMMMMMNNNNMMNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNMmsooooooooooooooooooooooo\n" + 
+					    		"ooooooooooooooooooooooymNNNNMMMMMMNNNNNNNNNNNNNNNNNNNNNNNNNNNMMMMMMMMMNNNMMMMMMMMMMMMNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNyooooooooooooooooooooooo\n" + 
+					    		"oooooooooooooooooooooohmNNNMMMMMMMNNNNNNNNNNNNNNNNNNNNNNNNNNNMMMMMMMMNNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdooooooooooooooooooooooo\n" + 
+					    		"oooooooooooooooooooooohNNNNNMMMMMMNNNNNNNNNNNNNNNNNNNNNNNNNNNMMMMMMMMNNMMMMMMMMMMNNNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNsoooooooooooooooooooooo\n" + 
+					    		"oooooooooooooooooooooohNNNNMMMMMMMNNNNNNNNNNNNNNNNNNNNNNNNNNNNMMMMMMNNNMMMMMMMMMMMMMNMMMMMMMMMMMMMMMMMMMMMMMMMMMMNNNNNNNNNNNNNNyoooooooooooooooooooooo\n" + 
+					    		"oooooooooooooooooooooodNNNNNNNNNMMMNNNNNNNNNNNNNNNNNNNNNNNNNNNMMMMMMNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNNNNNNNNNNNMNdoooooooooooooooooooooo\n" + 
+					    		"ooooooooooooooooooooosdNNNNMNNMMMMMNNNMNNNNNNNNNNNNNNNNNNNNNNNNMMMMNNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNNNNMMMMMMmsooooooooooooooooooooo\n" + 
+					    		"ooooooooooooooooooooosmNNNMMMMMMMMMMNNNNNNNNNNNNNNNNNNNNNNNNNNNMMMMNNMMMMMMMMMMMMNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNMMMMMMMNhooooooooooooooooooooo\n" + 
+					    		"ooooooooooooooooooooosmNNNNMMMMMMMMMNNNNNNNNNNNNNNNNNNNNNNNNMMNMMMNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMdsoooooooooooooooooooo\n" + 
+					    		"oooooooooooooooooooooymNNNNNMMMMMMMMNNNNNNNNNNNNNNNNNNNNNNNNMMMMMNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNyoooooooooooooooooooo\n" + 
+					    		"oooooooooooooooooooooymNNNNNNMMMMMMMMMNMNNNNNNNNNNNNNNNNNNNNMMMMNNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNhoooooooooooooooooooo\n" + 
+					    		"ooooooooooooooooooooohNNNNNNNNNNMMMMMMMNNNNNNNNNNMMNNNNNNNNMMMMMNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNNMMMMMMMMMMMNNMMmsooooooooooooooooooo\n" + 
+					    		"ooooooooooooooooooooohNNNNNNNNNNNNMMMMMNNNNNNNNNMMNNNNNNNNNNNMMMNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNNNNNMMMMMMMMMNMNyooooooooooooooooooo\n" + 
+					    		"ooooooooooooooooooooodNNNNNNNNMMMMMMMMMMMMNNNNNMMMMMNNNNNNNMMMMNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNNNNNNNMMMMMMMNNyooooooooooooooooooo\n" + 
+					    		"");
+					    System.out.println("The caption below states:\n\"This UIUC alumn, Chinny Emeka, solved the RSA problem and would make billions from his solution. \nThis painting is dedicated to him for all of his hard work over the years \nand for teaching the CS 125 AYM Lab Section.\"");
 					} catch(InterruptedException e) {
 					    System.out.println("You hear someone calling for you name and turn around. No one is there.\nYou look back at the wall but the painting is no longer there. Strange.");
 					    paintExists = false;
@@ -73,15 +152,7 @@ public class Game {
 			}
 			System.out.println("\n"); //here to see text easier
 		}
-		
-		
-		
-		System.out.println("What's your name?");
-		String name = scan.next();
 		scan.close();
-		System.out.println("Great! Continuing onward with the story.");
-		System.out.println("One day, you found a package in front of your door. Inside that package was a cat and a letter addressed from your grandpa!");
-		System.out.println("Dear " + name + ",");
 		
 	}
 	

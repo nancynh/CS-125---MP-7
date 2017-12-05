@@ -14,11 +14,15 @@ import javafx.application.Application;
  *
  */
 public class Game {
+	//Put scanner here otherwise it will throw a NoSuchElementException
+	//Closing scanner also closes any available input as well
+	//Source: https://stackoverflow.com/questions/13042008/java-util-nosuchelementexception-scanner-reading-user-input
+	static Scanner scan = new Scanner(System.in); //ex. String s = scan.next();
+
 	public static void main(String[] args) {
 		final int numGames = 6;
 		boolean run = true;
 		boolean paintExists = true;
-		Scanner scan = new Scanner(System.in); //ex. String s = scan.next();
 		System.out.println("You're walking on campus when you pass by a building you've never seen before. You decide to go check it out.");
 		System.out.println("You arrive to what looks like a rundown arcade. There are various games to play which you can play for free.");
 		
@@ -42,12 +46,13 @@ public class Game {
 			}
 			//scan.close();
 			if (play == 1) {
-				System.out.println("You leave the arcade. As soon as you stepped out, the whole place vanishes into thin air. Huh. Weird.\nYou head back home to do your MP. You completly forgot that it was due tomorrow.");
+				System.out.println("You leave the arcade. As soon as you stepped out, the whole place vanishes into thin air. \nHuh. \nWeird.\nYou head back home to do your MP. You completly forgot that it was due tomorrow.");
 				run = false;
 			} else if (play == 2) {
 				System.out.println("You go over to the cat simulator and start it up.");
 			} else if (play == 3) {
 				System.out.println("You go to the machine with a giant ship on it. You press the play button.");
+				playBattleShip();
 			} else if (play == 4) {
 				System.out.println("You spot a man leaning against a chalkboard. Above them is a sign that says, \"Play Hangman Here!\"\nYou walk up to him and tell him that you want to play.\nHe smiles and says, \"Great.\"");
 			} else if (play == 5) {
@@ -133,7 +138,7 @@ public class Game {
 					    		"ooooooooooooooooooooohNNNNNNNNNNNNMMMMMNNNNNNNNNMMNNNNNNNNNNNMMMNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNNNNNMMMMMMMMMNMNyooooooooooooooooooo\n" + 
 					    		"ooooooooooooooooooooodNNNNNNNNMMMMMMMMMMMMNNNNNMMMMMNNNNNNNMMMMNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNNNNNNNMMMMMMMNNyooooooooooooooooooo\n" + 
 					    		"");
-					    System.out.println("The caption below states:\n\"This UIUC alumn, Chinny Emeka, solved the RSA problem and would make billions from his solution. \nThis painting is dedicated to him for all of his hard work over the years \nand for teaching the CS 125 AYM Lab Section.\"");
+					    System.out.println("The caption below states:\n\"This UIUC alumn, Chinny Emeka, solved the RSA problem and would make billions \nfrom his solution. This painting is dedicated to him for all of his hard work \nover the years and for teaching the CS 125 AYM Lab Section.\"");
 					} catch(InterruptedException e) {
 					    System.out.println("You hear someone calling for you name and turn around. No one is there.\nYou look back at the wall but the painting is no longer there. Strange.");
 					    paintExists = false;
@@ -157,6 +162,77 @@ public class Game {
 	}
 	
 
+	
+	public static void playBattleShip() {
+		//Scanner scan = new Scanner(System.in); 
+		int length, height, maxGuesses, x, y;
+		
+		//Intro to the game
+		System.out.println(
+				"\nWelcome to Battleship!\n~~~~~~~~~~~~~~~~~~~~~~\n" +
+				"                                     # #  ( )\n" + 
+				"                                  ___#_#___|__\n" + 
+				"                              _  |____________|  _\n" + 
+				"                       _=====| | |            | | |==== _\n" + 
+				"                 =====| |.---------------------------. | |====\n" + 
+				"   <--------------------'   .  .  .  .  .  .  .  .   '--------------/\n" + 
+				"     \\                                                             /\n" + 
+				"      \\_______________________________________________WWS_________/\n" + 
+				"  wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww\n" + 
+				"wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww\n" + 
+				"   wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww \n" + 
+				"" +
+						  
+						  "\nIn this game your goal is to sink your opponent's ship in less than the number of guesses you're given!" +
+						  "\nThe number of guesses you have is calculated by the length of the ship multiplied by the height plus \nan additional 5 tries.");
+		System.out.println("\nType in an integer from 1 - 5 for the length of your enemy's ship: ");
+		length = scan.nextInt();
+		while (length < 1 || length > 5) {
+			System.out.println("Please type in an integer from 1 - 5 for the length of the ship");
+			length = scan.nextInt();
+		}
+		
+		System.out.println("Type in an integer from 1 - 5 for the height of your enemy's ship: ");
+		height = scan.nextInt();
+		while (height < 1 || height > 5) {
+			System.out.println("Please type in an integer from 1 - 5 for the height of the ship");
+			height = scan.nextInt();
+		}
+		
+		maxGuesses = length * height + 5;
+		
+		//Randomly generates the location for the ship
+		x = (int) (Math.random() * (15 - length));
+		y = (int) (Math.random() * (15 - height));
+		Ship targetShip = new Ship(x, length, height, y);
+		
+		PlayerBS player = new PlayerBS(targetShip);
+		
+		//Running the game itself. Only runs if the player hasn't used up all of their guesses and the ship hasn't sunk yet
+		while (!targetShip.isSunk() && player.getGuesses() < maxGuesses) {
+			int xGuess, yGuess;
+			try {
+			    Thread.sleep(350);
+			    player.drawBoard();
+			} catch(InterruptedException e) {
+			    System.out.println("Exception has occured :(");
+			}	
+			System.out.println("\nGuess a location. \nx-coordinate: ");
+			xGuess = scan.nextInt();
+			System.out.println("y-coordinate: ");
+			yGuess = scan.nextInt();
+			player.takeShot(xGuess, yGuess);
+			System.out.println("\t\tNumber of moves left: " + (maxGuesses - player.getGuesses()));
+		}
+		
+		//End game results
+	    player.drawBoard();
+		if (player.getGuesses() < maxGuesses) {
+			System.out.println("\nCongrats! You won!\nIt took you " + player.getGuesses() + " tries!");
+		} else {
+			System.out.println("\nYou lose! You didn't sink the ship in " + maxGuesses + " moves or less :(");
+		}		
+	}
 	
 	
 	

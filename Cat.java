@@ -16,7 +16,18 @@ public class Cat {
 		hp = h;
 	}
 	
+	/**
+	 *Current cat attacking their opponent. 
+	 * @param c is the cat you're attacking
+	 */
+	public void attack(Cat c) {
+		//Do probablity of the cat being able to hit the cat
+		//If hit cat, then other cat will take damage
+	}
 	
+	public void defend(Cat c) {
+		
+	}
 	
 	
 	//Getters

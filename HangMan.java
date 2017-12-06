@@ -98,7 +98,7 @@
 				System.out.println("___|___");
 			}
 			if (count == 1) {
-				System.out.println("Hmmmm, not quite... Try again");
+				System.out.println("Hmmmmm, not quite... Try again");
 				System.out.println("   ____________");
 				System.out.println("   |          _|_");
 				System.out.println("   |         /   \\");

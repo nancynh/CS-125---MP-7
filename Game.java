@@ -55,7 +55,7 @@ public class Game {
 				playBattleShip();
 			} else if (play == 4) {
 				System.out.println("You spot a man leaning against a chalkboard. Above them is a sign that says, \"Play Hangman Here!\"\nYou walk up to him and tell him that you want to play.\nHe smiles and says, \"Great.\"");
-				playHangman();
+				HangMan.hangMan();
 			} else if (play == 5) {
 				if (paintExists) {
 					System.out.println("There's a portrait of a man on the wall. You walk up to it to take a closer look.");
@@ -242,12 +242,7 @@ public class Game {
 		mediaPlayer.play();
 	}
 	
-	public static void playHangman() {
-		//FIX - need to somehow implement Sherina's hangman in so you can actually access it
-		HangMan h1 = new HangMan();
-		h1.hangMan();
-		
-	}
+	
 	
 	
 	

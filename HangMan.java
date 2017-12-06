@@ -18,14 +18,14 @@
 				System.out.println(currentResultString);
 				System.out.println(incorrectLetters);
 				String guess = input.next();
-				if(incorrectLetters.indexOf(guess) != -1 && incorrectLetters.length() > 0) {
-					System.out.println("Enter a different letter");
-					guess = input.next();
-					hang(guess);
+		//		if(incorrectLetters.indexOf(guess) != -1 && incorrectLetters.length() > 1) { //check for repeat letters
+		//			System.out.println("Enter a different letter");
+		//			guess = input.next();
+		//			hang(guess);
 					
-				} else {
+		//		} else {
 					hang(guess);
-				}
+		//		}
 			}
 			input.close();
 		}
@@ -98,7 +98,7 @@
 				System.out.println("___|___");
 			}
 			if (count == 1) {
-				System.out.println("Hmmmmm, not quite... Try again");
+				System.out.println("Hmmmm, not quite... Try again");
 				System.out.println("   ____________");
 				System.out.println("   |          _|_");
 				System.out.println("   |         /   \\");

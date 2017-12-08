@@ -5,14 +5,17 @@
 
 		private static String[] wordBank = {"awkward", "terminator", "banana", "computer", "cow", "rain", "water",
 										"oxygen", "zombie", "pajama", "breeze", "mysterious", "fireplace" };
-		private static String word = wordBank[(int) (Math.random() * wordBank.length)]; //randomly chooses a word from the wordBank
-		private static String currentResultString = new String(new char[word.length()]).replace("\0", "*"); //the displayed results
+		private static String word;
+		private static String currentResultString;
 		private static int count = 0; //counts the number of incorrect guesses 
-		private static String incorrectLetters = "Past attempts:"; //keeps track of incorrect guesses 
+		private static String incorrectLetters; 
 
 		public static void hangMan() { //main method to be called from game center
 			Scanner input = new Scanner(System.in);
-
+			word = wordBank[(int) (Math.random() * wordBank.length)]; //randomly chooses a word from the wordBank
+			currentResultString = new String(new char[word.length()]).replace("\0", "*"); //the displayed results
+			incorrectLetters = "Past attempts:"; //keeps track of incorrect guesses 
+			
 			while (count < 6 && currentResultString.contains("*")) { //while game still in play
 				System.out.println("Guess any letter in the word");
 				System.out.println(currentResultString);
@@ -27,7 +30,8 @@
 					hang(guess);
 		//		}
 			}
-			input.close();
+			count = 0;
+			//input.close();
 		}
 
 		public static void hang(String guess) {

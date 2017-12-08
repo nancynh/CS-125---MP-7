@@ -243,9 +243,8 @@ public class Game {
 	}
 	
 	public static void playHangman() {
-		//FIX - need to somehow implement Sherina's hangman in so you can actually access it
-		HangMan h1 = new HangMan();
-		h1.hangMan();
+		//FIX - be able to play hangman more than once
+		HangMan.hangMan();
 		
 	}
 	

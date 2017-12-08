@@ -55,7 +55,7 @@ public class Game {
 				playBattleShip();
 			} else if (play == 4) {
 				System.out.println("You spot a man leaning against a chalkboard. Above them is a sign that says, \"Play Hangman Here!\"\nYou walk up to him and tell him that you want to play.\nHe smiles and says, \"Great.\"");
-				playHangman();
+				HangMan.hangMan();
 			} else if (play == 5) {
 				if (paintExists) {
 					System.out.println("There's a portrait of a man on the wall. You walk up to it to take a closer look.");
@@ -242,11 +242,15 @@ public class Game {
 		mediaPlayer.play();
 	}
 	
+<<<<<<< HEAD
 	public static void playHangman() {
 		//FIX - be able to play hangman more than once
 		HangMan.hangMan();
 		
 	}
+=======
+	
+>>>>>>> e08b8590177a70e676250a65a6bbe5ae4e608238
 	
 	
 	

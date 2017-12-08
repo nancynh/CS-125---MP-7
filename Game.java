@@ -31,11 +31,12 @@ public class Game {
 						           + "\n\t• Leave the arcade (1)"
 						           + "\n\t• Play that cat simulator (2)"
 						           + "\n\t• Play Battleship (3)"
-						           + "\n\t• Play Hangman (4)");
+						           + "\n\t• Play Hangman (4)" 
+						           + "\n\t• Play Tic-Tac-Toe (5)");
 			if (paintExists) {
-				System.out.println("\t• Stare at the painting (5)");
+				System.out.println("\t• Stare at the painting (6)");
 			} else {
-				System.out.println("\t• Stare at the wall (5)");
+				System.out.println("\t• Stare at the wall (6)");
 			}
 			System.out.println("\t• Play some music (" + numGames + ")"); //ahahaha probs won't work
 			
@@ -57,6 +58,15 @@ public class Game {
 				System.out.println("You spot a man leaning against a chalkboard. Above them is a sign that says, \"Play Hangman Here!\"\nYou walk up to him and tell him that you want to play.\nHe smiles and says, \"Great.\"");
 				HangMan.hangMan();
 			} else if (play == 5) {
+				System.out.println("You go over to the booth where someone with a hood on sits. In front of them is a tablet with a tic-tac-toe game. "
+								   + "\nThe person looks up and pulls off their hood revealing to be you!"
+								   + "\n\"Hey myself. Let's play a game of tic-tac-toe,\" your clone says."
+								   + "\nYou ask, \"But wouldn't I basically be playing by myself then?\""
+								   + "\n\"Yup! But it'll be fun because you will win no matter what!\""
+								   + "\n\"Okay.\""
+								   + "\"Great. You start.\"\n" );
+				TicTacToe.ticTacToe();
+			} else if (play == 6) {
 				if (paintExists) {
 					System.out.println("There's a portrait of a man on the wall. You walk up to it to take a closer look.");
 					seePainting();
@@ -242,11 +252,7 @@ public class Game {
 		mediaPlayer.play();
 	}
 	
-	public static void playHangman() {
-		//FIX - be able to play hangman more than once
-		HangMan.hangMan();
-		
-	}
+	
 
 	
 	

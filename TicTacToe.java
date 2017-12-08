@@ -17,7 +17,7 @@ public class TicTacToe {
  
    // The game board and the game status
    public static final int ROWS = 3, COLUMNS = 3; // number of rows and columns
-   public static int[][] board = new int[ROWS][COLUMNS]; // game board in 2D array
+   public static int[][] board; // game board in 2D array
                                                      
    public static int currentState;  // the current state of the game
                                     // (PLAYING, DRAW, X_WON, CIRCLE_WON)
@@ -28,6 +28,10 @@ public class TicTacToe {
  
    /** The entry main method (the program starts here) */
    public static void ticTacToe() {
+	   //This resets the board from the last game
+	   board = new int[ROWS][COLUMNS];
+	   //print the board first
+	   printBoard();
       // start the game-board and current status
 	   startGame();
       // Play the game once

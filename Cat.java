@@ -23,8 +23,13 @@ public class Cat {
 	public void attack(Cat c) {
 		//Do probablity of the cat being able to hit the cat
 		//If hit cat, then other cat will take damage
+		
 	}
 	
+	/**
+	 * Current cat defending against their opponent.
+	 * @param c is the cat you're defending from
+	 */
 	public void defend(Cat c) {
 		
 	}

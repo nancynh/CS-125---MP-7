@@ -51,6 +51,7 @@ public class Game {
 				run = false;
 			} else if (play == 2) {
 				System.out.println("You go over to the cat simulator and start it up.");
+				playCat();
 			} else if (play == 3) {
 				System.out.println("You go to the machine with a giant ship on it. You press the play button.");
 				playBattleShip();
@@ -252,7 +253,24 @@ public class Game {
 		mediaPlayer.play();
 	}
 	
-	
+	public static void playCat() {
+		System.out.println(
+				"                      /^--^\\     /^--^\\     /^--^\\\n" + 
+				"                      \\____/     \\____/     \\____/\n" + 
+				"                     /      \\   /      \\   /      \\\n" + 
+				"                    |        | |        | |        |\n" + 
+				"                     \\__  __/   \\__  __/   \\__  __/\n" + 
+				"|^|^|^|^|^|^|^|^|^|^|^|^\\ \\^|^|^|^/ /^|^|^|^|^\\ \\^|^|^|^|^|^|^|^|^|^|^|^|\n" + 
+				"| | | | | | | | | | | | |\\ \\| | |/ /| | | | | | \\ \\ | | | | | | | | | | |\n" + 
+				"########################/ /######\\ \\###########/ /#######################\n" + 
+				"| | | | | | | | | | | | \\/| | | | \\/| | | | | |\\/ | | | | | | | | | | | |\n" + 
+				"|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|" + 
+				"\nWelcome to the Cat Simulator game! In this game you will be given some choices to make."
+				+ "\nIf you are given a set of choices then please type in the corresponding number to the"
+				+ "\nchoice you want to make. (ex. If you want to choose option (2) then you type in \"2\")"
+				+ "\n");
+		CatGame.game();
+	}
 
 	
 	

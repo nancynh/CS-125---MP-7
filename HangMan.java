@@ -4,7 +4,16 @@
 	public class HangMan {
 
 		private static String[] wordBank = {"awkward", "terminator", "banana", "computer", "cow", "rain", "water",
-										"oxygen", "zombie", "pajama", "breeze", "mysterious", "fireplace" };
+										"oxygen", "zombie", "pajama", "breeze", "mysterious", "fireplace", "jazz", 
+										"frazzled", "mnemonic", "voyeurism", "voodoo", "transplant", "zodiac", 
+										"xylophone", "youthful", "sphinx", "pneumonia", "khaki", "espionage", 
+										"keyhole", "microwave", "fluffiness", "beekeeper", "buffalo", "fuchsia",
+										"bagpipes", "dwarves", "nymph", "onyx", "stronghold", "polka", "jogging",
+										"croquet", "barrels", "gazette", "finance", "revolutionary", "corruption", 
+										"dilemma", "colleague", "seed", "quit", "cinema", "nuclear", "happen", "bill",  
+										"hippopotomonstrosesquippedaliophobia", "supercalifragilisticexpialidocious",
+										"insomnia", "memes", "corn", "illinois", "soybeans", "champaign", "urbana",
+										"uiuc", "csrocks", "acm", "wcs", "angrave", "challen", "chapman"};
 		private static String word;
 		private static String currentResultString;
 		private static int count = 0; //counts the number of incorrect guesses 

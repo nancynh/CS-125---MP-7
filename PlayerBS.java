@@ -5,7 +5,7 @@
  */
 public class PlayerBS {
 	private int numGuess; //number of guesses the player made
-	private Ship s1;		//The sole ship the player will try to find and hit lol
+	private Ship s1;		//The sole ship the player will try to find and hit lol 
 	public String[][] gameBoard = new String[15][15]; //The gameboard where the ship will be
 	
 	public PlayerBS(Ship s2) {

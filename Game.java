@@ -270,6 +270,7 @@ public class Game {
 				+ "\nchoice you want to make. (ex. If you want to choose option (2) then you type in \"2\")"
 				+ "\n");
 		CatGame.game();
+		
 	}
 
 	

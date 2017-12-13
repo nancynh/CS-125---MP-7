@@ -38,7 +38,7 @@ public class Game {
 			} else {
 				System.out.println("\t• Stare at the wall (6)");
 			}
-			System.out.println("\t• Play some music (" + numGames + ")"); //ahahaha probs won't work
+			//System.out.println("\t• Play some music (" + numGames + ")"); //ahahaha probs won't work
 			
 			int play = scan.nextInt();
 			while (play <= 0 || play > numGames) {
@@ -74,12 +74,12 @@ public class Game {
 				} else {
 					System.out.println("You stare at the wall for a few minutes until you decide to do something else.");
 				}
-			} else {
+			} /*else {
 				//Got this from: https://stackoverflow.com/questions/6045384/playing-mp3-and-wav-in-java
 				Application.launch();
 				System.out.println("You go over to the radio and turn it on. Music starts to play.");
 				playMusic();		
-			}
+			}*/
 			System.out.println("\n"); //here to see text easier
 		}
 		scan.close();
@@ -246,12 +246,12 @@ public class Game {
 		}		
 	}
 	
-	public static void playMusic() {
+	/*public static void playMusic() {
 		String song = "Lawrence_Angrave_performs_parody_of_Taylor_Swifts_Blank_Space_for_CS_241_Systems_Programming[Mp3Converter.net].mp3";
 		Media hit = new Media(new File(song).toURI().toString());
 		MediaPlayer mediaPlayer = new MediaPlayer(hit);
 		mediaPlayer.play();
-	}
+	}*/
 	
 	public static void playCat() {
 		System.out.println(
@@ -269,8 +269,7 @@ public class Game {
 				+ "\nIf you are given a set of choices then please type in the corresponding number to the"
 				+ "\nchoice you want to make. (ex. If you want to choose option (2) then you type in \"2\")"
 				+ "\n");
-		CatGame.game();
-		
+		Cat.game();
 	}
 
 	
